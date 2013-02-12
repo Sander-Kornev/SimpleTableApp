@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Code</key>
+		<string>us</string>
+		<key>Continent</key>
+		<string>North America</string>
+		<key>Country</key>
+		<string>USA</string>
+		<key>Language</key>
+		<string>english</string>
+		<key>Population</key>
+		<integer>465443232</integer>
+		<key>Area</key>
+		<integer>63148569</integer>
+		<key>Latitude</key>
+		<string>39,639538</string>
+		<key>Longitude</key>
+		<string>-101,25</string>
+	</dict>
+	<dict>
+		<key>Code</key>
+		<string>gb</string>
+		<key>Continent</key>
+		<string>Europe</string>
+		<key>Country</key>
+		<string>GBR</string>
+		<key>Language</key>
+		<string>english</string>
+		<key>Population</key>
+		<integer>62698362</integer>
+		<key>Area</key>
+		<integer>243809</integer>
+		<key>Latitude</key>
+		<string>52,05249</string>
+		<key>Longitude</key>
+		<string>-1,582031</string>
+	</dict>
+	<dict>
+		<key>Code</key>
+		<string>es</string>
+		<key>Continent</key>
+		<string>Europe</string>
+		<key>Country</key>
+		<string>Spain</string>
+		<key>Language</key>
+		<string>Spanish</string>
+		<key>Population</key>
+		<integer>47190500</integer>
+		<key>Area</key>
+		<integer>347578</integer>
+		<key>Latitude</key>
+		<string>40,647304</string>
+		<key>Longitude</key>
+		<string>-3,515625</string>
+	</dict>
+</array>
+</plist>

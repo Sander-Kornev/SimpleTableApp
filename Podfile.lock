@@ -1,0 +1,11 @@
+
+PODS:
+- NLCoreData (0.4.2)
+
+DEPENDENCIES:
+- NLCoreData (= 0.4.2)
+
+SPEC CHECKSUMS:
+  NLCoreData: da7ea55a05ab11d211c97e3da77db4ce55976445
+
+COCOAPODS: 0.16.2

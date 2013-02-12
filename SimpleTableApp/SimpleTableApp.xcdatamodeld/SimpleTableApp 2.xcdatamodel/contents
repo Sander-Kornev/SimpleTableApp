@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="11G63" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Continent" representedClassName="Continent" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="conuntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contry" inverseName="continent" inverseEntity="Contry" syncable="YES"/>
+    </entity>
+    <entity name="Contry" representedClassName="Contry" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flagImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="population" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="continent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Continent" inverseName="conuntries" inverseEntity="Continent" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Continent" positionX="-126" positionY="162" width="128" height="75"/>
+        <element name="Contry" positionX="160" positionY="192" width="128" height="180"/>
+    </elements>
+</model>

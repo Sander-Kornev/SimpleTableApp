@@ -1,0 +1,14 @@
+
+PODS:
+- GHUnitIOS (0.5.6)
+- NLCoreData (0.4.2)
+
+DEPENDENCIES:
+- GHUnitIOS
+- NLCoreData (= 0.4.2)
+
+SPEC CHECKSUMS:
+  NLCoreData: da7ea55a05ab11d211c97e3da77db4ce55976445
+  GHUnitIOS: bf149b2c44084eee2785ce4ac3675c3a699e509d
+
+COCOAPODS: 0.16.2

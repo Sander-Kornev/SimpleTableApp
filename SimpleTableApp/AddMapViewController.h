@@ -12,6 +12,6 @@
 
 @interface AddMapViewController : UIViewController<MKMapViewDelegate>
 
-- (CLLocationCoordinate2D)getCoordinate;
+- (CLLocationCoordinate2D)selectedCountryCoordinate;
 
 @end

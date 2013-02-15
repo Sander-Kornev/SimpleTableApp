@@ -25,10 +25,8 @@
 
 - (void) LoadSettings
 {
-	if ([[NSUserDefaults standardUserDefaults] boolForKey: @"plistLoaded"])
+	if (![[NSUserDefaults standardUserDefaults] boolForKey: @"plistLoaded"])
 	{
-		//do nothing
-	} else {
         [self loadContinents];
         [self loadCountries];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"plistLoaded"];
@@ -55,7 +53,6 @@
 
 - (void)loadCountries
 {
-    
     NSString *errorDesc = nil;
     NSPropertyListFormat format;
     NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"CountryStore" ofType:@"plist"];
@@ -76,18 +73,17 @@
         [continent addConuntriesObject:contry];
         [contry setContinent:continent];
         NSString* code = [inner valueForKey:@"Code"];
- 
         contry.code = code;
+        DownloadManager* downloadManager = [[DownloadManager alloc] init];
+        [downloadManager imageForCode:code forCountry:contry];
         contry.countryName = [inner valueForKey:@"Country"];
         contry.language = [inner valueForKey:@"Language"];
         contry.population = [inner valueForKey:@"Population"];
         contry.area = [inner valueForKey:@"Area"];
         NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
         [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        contry.longitude = [numberFormatter numberFromString:[inner valueForKey:@"Longitude"]];
-        contry.latitude = [numberFormatter numberFromString:[inner valueForKey:@"Latitude"]];
-        DownloadManager* downloadManager = [[DownloadManager alloc] init];
-        [downloadManager imageForCode:code forCountry:contry];
+        contry.longitude = [inner valueForKey:@"Longitude"];
+        contry.latitude = [inner valueForKey:@"Latitude"];
     }
     [[NSManagedObjectContext mainContext] saveNested];
 }

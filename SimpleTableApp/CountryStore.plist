@@ -16,9 +16,9 @@
 		<key>Area</key>
 		<integer>63148569</integer>
 		<key>Latitude</key>
-		<string>39,639538</string>
+		<real>39.639538</real>
 		<key>Longitude</key>
-		<string>-101,25</string>
+		<real>-101.25</real>
 	</dict>
 	<dict>
 		<key>Code</key>
@@ -34,9 +34,9 @@
 		<key>Area</key>
 		<integer>243809</integer>
 		<key>Latitude</key>
-		<string>52,05249</string>
+		<real>52.05249</real>
 		<key>Longitude</key>
-		<string>-1,582031</string>
+		<real>-1.582031</real>
 	</dict>
 	<dict>
 		<key>Code</key>
@@ -52,9 +52,9 @@
 		<key>Area</key>
 		<integer>347578</integer>
 		<key>Latitude</key>
-		<string>40,647304</string>
+		<real>40.647304</real>
 		<key>Longitude</key>
-		<string>-3,515625</string>
+		<real>-3.515625</real>
 	</dict>
 </array>
 </plist>

@@ -10,7 +10,6 @@
 #import "CountryStore.h"
 #import "CountryViewController.h"
 #import "AddViewController.h"
-#import "FullMapViewController.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 

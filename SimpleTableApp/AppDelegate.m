@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "FullMapViewController.h"
 
 @implementation AppDelegate
 
@@ -24,8 +25,6 @@
     FullMapViewController* mapVC = [[FullMapViewController alloc ] init ];
     NSArray* controllers = [ NSArray arrayWithObjects:navigationController, mapVC, nil ];
     tab.viewControllers = controllers;
-   
-    
     
     self.window.rootViewController = tab;
     [self.window makeKeyAndVisible];

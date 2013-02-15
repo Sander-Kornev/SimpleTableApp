@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
     self.title = self.country.countryName;
     self.labelArea.text = [NSString stringWithFormat:@ "%i",[self.country.area integerValue]];
     self.labelContinent.text = self.country.continent.name;

@@ -10,5 +10,5 @@
 @interface DownloadManager : NSURLConnection
 - (void)imageForCode:(NSString*)code forCountry:(Contry*)country;
 - (void)imageForCode:(NSString*)code toImageView:(UIImageView*)imageView;
-- (void)getDataforCountry:(Contry*)contry;
+- (void)setImageDataforCountry:(Contry*)contry;
 @end

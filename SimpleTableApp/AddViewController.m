@@ -13,17 +13,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 @property (weak) IBOutlet UITextField *fieldLanguage;
 @property (weak) IBOutlet UITextField *fieldPopulation;
-@property (weak) IBOutlet UITextField *fieldCountry;
-@property (weak, nonatomic) IBOutlet UITextField *fieldCode;
-@property (weak, nonatomic) IBOutlet UITextField *fieldArea;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIPickerView *picker;
+@property (weak) IBOutlet UITextField *fieldCode;
+@property (weak) IBOutlet UITextField *fieldArea;
 @property (strong) NSArray* textFields;
-@property BOOL keyboardShow;
 @property (weak) UITextField* responder;
+@property (weak) IBOutlet UITextField *fieldCountry;
+@property (weak) IBOutlet UIScrollView *scrollView;
+@property (weak) IBOutlet UIPickerView *picker;
+@property (weak) IBOutlet UIImageView *flagImage;
+@property BOOL keyboardShow;
 @property (strong) AddMapViewController* addMVC;
 @property (strong) NSArray* continents;
-@property (weak, nonatomic) IBOutlet UIImageView *flagImage;
 @property DownloadManager* downloadManager;
 
 @end
@@ -163,12 +163,12 @@
     NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
     contry.population = [numberFormatter numberFromString:self.fieldPopulation.text];
     contry.area = [numberFormatter numberFromString:self.fieldArea.text];
-    [self.downloadManager getDataforCountry:contry];
+    [self.downloadManager setImageDataforCountry:contry];
     contry.code = self.fieldCode.text;
         //write coordinates
-    contry.longitude = [NSNumber numberWithFloat:[self.addMVC getCoordinate].longitude];
-    contry.latitude = [NSNumber numberWithFloat:[self.addMVC getCoordinate].latitude];
-        //add ralations
+    contry.longitude = [NSNumber numberWithFloat:[self.addMVC selectedCountryCoordinate].longitude];
+    contry.latitude = [NSNumber numberWithFloat:[self.addMVC selectedCountryCoordinate].latitude];
+        //add relations
     int numberOfContinent = [self.picker selectedRowInComponent:0];
     Continent* continent = [self.continents objectAtIndex:numberOfContinent];
     [continent addConuntriesObject:contry];
@@ -201,13 +201,11 @@
 
 #pragma mark- UIPickerViewDataSource
 
-// returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return  1;
 }
 
-// returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return self.continents.count;

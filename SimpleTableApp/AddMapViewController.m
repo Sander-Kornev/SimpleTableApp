@@ -38,8 +38,18 @@
     UIBarButtonItem *returnBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(backAction:)];
     self.navigationItem.leftBarButtonItem = returnBarButtonItem;
     self.annotationShow = NO;
-    
-    // Do any additional setup after loading the view from its nib.
+    #define kGeoCodingString @"http://maps.google.com/maps/geo?q=%f,%f&output=csv" 
+}
+
+
+-(NSString *)getAddressFromLatLon:(double)pdblLatitude withLongitude:(double)pdblLongitude
+{
+    NSString *urlString = [NSString stringWithFormat:kGeoCodingString,pdblLatitude, pdblLongitude];
+    NSError* error;
+    NSString *locationString = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] encoding:NSASCIIStringEncoding error:&error];
+    locationString = [locationString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    NSArray *listItems = [locationString componentsSeparatedByString:@","];
+    return [listItems lastObject];
 }
 
 - (void)showCountry:(UITapGestureRecognizer*) tap
@@ -48,9 +58,10 @@
         self.annotation = [[MKPointAnnotation alloc] init];
         CGPoint point = [tap locationInView:self.myMap];
         CLLocationCoordinate2D coordinate = [self.myMap convertPoint:point toCoordinateFromView:self.myMap];
+        NSString* countryName = [self getAddressFromLatLon:coordinate.latitude withLongitude:coordinate.longitude];
         self.annotation.coordinate = coordinate;
-        self.annotation.title = @"New country?";
-        //self.annotation.subtitle = @"What are you doing here?";
+        self.annotation.subtitle = @"New country?";
+        self.annotation.title = countryName;
         [self.myMap addAnnotation:self.annotation];
         self.annotationShow = YES;
     }
@@ -72,12 +83,20 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (CLLocationCoordinate2D)getCoordinate
+- (CLLocationCoordinate2D)selectedCountryCoordinate
 {
     return self.annotation.coordinate;
 }
 
 #pragma mark - MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState {
+	
+	if (oldState == MKAnnotationViewDragStateDragging) {   
+        NSString* country = [self getAddressFromLatLon:self.annotation.coordinate.latitude withLongitude:self.annotation.coordinate.longitude];
+		self.annotation.title = country;
+        }
+}
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -85,7 +104,6 @@
         // If it's the user location, just return nil.
         if ([annotation isKindOfClass:[MKUserLocation class]])
             return nil;
-        
         // Handle any custom annotations.
         if ([annotation isKindOfClass:[MKPointAnnotation class]])
         {
@@ -98,12 +116,9 @@
                 pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                            reuseIdentifier:@"CustomPinAnnotationView"];
                 pinView.pinColor = MKPinAnnotationColorGreen;
-                //pinView =
                 pinView.draggable = YES;
                 pinView.animatesDrop = YES;
                 pinView.canShowCallout = YES;
-                
-                // Add a detail disclosure button to the callout.
             } else {
                 pinView.annotation = annotation;
             }

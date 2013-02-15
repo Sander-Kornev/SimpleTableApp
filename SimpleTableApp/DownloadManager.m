@@ -56,7 +56,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     self.imageView.image = [UIImage imageWithData:self.imageData];
-    [self getDataforCountry:self.country];
+    [self setImageDataforCountry:self.country];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
@@ -66,7 +66,7 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
-- (void)getDataforCountry:(Contry*)contry
+- (void)setImageDataforCountry:(Contry*)contry
 {
     contry.flagImage = [NSData dataWithData:self.imageData];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadComplete" object:self];

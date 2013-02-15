@@ -38,7 +38,6 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.title = @"Continents";
     CountryStore* store = [[CountryStore alloc] init];
-    //store.viewController = self;
 }
 
 - (IBAction)addAction:(id)sender
@@ -96,15 +95,9 @@
     
 	NSError *error = nil;
 	if (![self.fetchedResultsController performFetch:&error]) {
-	    /*
-	     Replace this implementation with code to handle the error appropriately.
-         
-	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-	     */
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
 	}
-    
     return self.fetchedResultsController;
 }
 
@@ -113,7 +106,6 @@
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.table beginUpdates];
 }
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
@@ -130,7 +122,6 @@
             break;
     }
 }
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
@@ -164,11 +155,9 @@
     }
 }
 
-
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.table endUpdates];
 }
-
 
 #pragma mark - DataSource
 
@@ -248,8 +237,6 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the managed object for the given index path
         [self.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        // Save the context.
         [self.managedObjectContext saveNested];
     }
 }

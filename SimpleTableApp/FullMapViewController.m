@@ -35,7 +35,6 @@
     self.navigationItem.leftBarButtonItem = returnBarButtonItem;
     UIBarButtonItem *addBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAction:)];
 	self.navigationItem.rightBarButtonItem = addBarButtonItem;
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated

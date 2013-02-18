@@ -11,4 +11,5 @@
 - (void)imageForCode:(NSString*)code forCountry:(Contry*)country;
 - (void)imageForCode:(NSString*)code toImageView:(UIImageView*)imageView;
 - (void)setImageDataforCountry:(Contry*)contry;
+typedef void(^ClassCallback)(void);
 @end

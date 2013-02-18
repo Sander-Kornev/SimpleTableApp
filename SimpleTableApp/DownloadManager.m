@@ -12,7 +12,7 @@
 @property Contry* country;
 @property NSMutableData* imageData;
 @property UIImageView* imageView;
-
+@property (copy) ClassCallback processing;
 @end
 
 @implementation DownloadManager
@@ -20,12 +20,22 @@
 - (void)imageForCode:(NSString*)code forCountry:(Contry*)country
 {
     self.country = country;
+    __weak DownloadManager *dm = self;
+    self.processing = ^(){
+        dm.country.flagImage = [NSData dataWithData:dm.imageData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadComplete" object:dm];
+    };
     [self imageForCode:code];
+
 }
 
 - (void)imageForCode:(NSString*)code toImageView:(UIImageView*)imageView
 {
     self.imageView = imageView;
+    __weak DownloadManager *dm = self;
+    self.processing = ^(){
+        dm.imageView.image = [UIImage imageWithData:dm.imageData];
+    };
     [self imageForCode:code];
 }
 
@@ -55,10 +65,10 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    self.imageView.image = [UIImage imageWithData:self.imageData];
-    [self setImageDataforCountry:self.country];
+    self.processing();
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
+
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
@@ -69,7 +79,6 @@
 - (void)setImageDataforCountry:(Contry*)contry
 {
     contry.flagImage = [NSData dataWithData:self.imageData];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"loadComplete" object:self];
 }
 
 @end

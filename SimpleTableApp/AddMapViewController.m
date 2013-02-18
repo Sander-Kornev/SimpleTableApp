@@ -46,7 +46,7 @@
 {
     NSString *urlString = [NSString stringWithFormat:kGeoCodingString,pdblLatitude, pdblLongitude];
     NSError* error;
-    NSString *locationString = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] encoding:NSASCIIStringEncoding error:&error];
+    NSString *locationString = [NSString stringWithContentsOfURL:[NSURL URLWithString:urlString] encoding:NSUTF8StringEncoding error:&error];
     locationString = [locationString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
     NSArray *listItems = [locationString componentsSeparatedByString:@","];
     return [listItems lastObject];

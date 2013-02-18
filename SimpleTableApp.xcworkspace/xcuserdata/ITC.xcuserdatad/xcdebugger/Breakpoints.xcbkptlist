@@ -346,11 +346,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleTableApp/DownloadManager.m"
-         timestampString = "382352702.311556"
+         timestampString = "382878852.714972"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
          landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -359,13 +359,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleTableApp/DownloadManager.m"
-         timestampString = "382350153.571348"
+         timestampString = "382878381.346787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
-         landmarkName = "-connection:didReceiveData:"
-         landmarkType = "5">
+         startingLineNumber = "65"
+         endingLineNumber = "65"
+         landmarkName = "@implementation DownloadManager"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -424,11 +424,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleTableApp/DownloadManager.m"
-         timestampString = "382350257.051081"
+         timestampString = "382878381.346787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
          landmarkName = "-imageForCode:toImageView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -437,11 +437,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleTableApp/DownloadManager.m"
-         timestampString = "382350258.2031"
+         timestampString = "382878381.346787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "-imageForCode:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -450,11 +450,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleTableApp/DownloadManager.m"
-         timestampString = "382352702.311556"
+         timestampString = "382878852.714972"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
          landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -463,12 +463,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SimpleTableApp/DownloadManager.m"
-         timestampString = "382350377.474333"
+         timestampString = "382878381.346787"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
-         landmarkName = "-connection:didReceiveData:"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
+         landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -573,6 +573,58 @@
          startingLineNumber = "85"
          endingLineNumber = "85"
          landmarkName = "-loadCountries"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SimpleTableApp/AddMapViewController.m"
+         timestampString = "382639026.530549"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
+         landmarkName = "-getAddressFromLatLon:withLongitude:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SimpleTableApp/AddMapViewController.m"
+         timestampString = "382639139.448816"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
+         landmarkName = "-getAddressFromLatLon:withLongitude:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SimpleTableApp/DownloadManager.m"
+         timestampString = "382875096.076064"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "15"
+         endingLineNumber = "15"
+         landmarkName = "processing"
+         landmarkType = "19">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SimpleTableApp/DownloadManager.m"
+         timestampString = "382878381.346787"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
+         landmarkName = "-connectionDidFinishLoading:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
